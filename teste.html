@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Estilo para o preço do produto */
+    .product-price__price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    /* Estilo para o texto de parcelamento */
+    .installment {
+      font-size: 16px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-price">
+    <span class="product-price__price">R$ 100</span>
+  </div>
+  <script>
+    // Pega o elemento do preço do produto
+    var price = document.querySelector(".product-price__price");
+    
+    // Calcula o valor da parcela
+    var installment = price.innerHTML / 12;
+    
+    // Formata o valor da parcela com duas casas decimais
+    installment = installment.toFixed(2);
+    
+    // Adiciona o texto de parcelamento à página
+    price.insertAdjacentHTML("afterend", "<div class='installment'>12x de R$ " + installment + "</div>");
+  </script>
+</body>
+</html>
